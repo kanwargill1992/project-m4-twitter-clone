@@ -22,16 +22,7 @@ const Tweets = ({ feed }) => {
             onKeyPress={(e) => e.key === "Enter" && setTweet(tweet.id)}
           >
             <Tweetplace>
-              <DisplayName>
-                {/* <link
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                  to={`/${tweet.author.handle}`}
-                >
-                  {tweet.author.displayName}
-                </link> */}
-              </DisplayName>
+              <DisplayName></DisplayName>
               <Avatar src={tweet.author.avatarSrc} />
               <Author>@{tweet.author.handle}</Author>
             </Tweetplace>
@@ -42,7 +33,7 @@ const Tweets = ({ feed }) => {
           </Wrapper3>
 
           <Timestamp>
-            {dateformat(tweet.timestamp, "dd mmmm yyyy  h:MM:ss TT")}
+            {dateformat(tweet.timestamp, "dd mmmm yyyy  hh:MM:ss TT")}
           </Timestamp>
           <TweetTarget
             tweetId={tweet.id}
@@ -59,9 +50,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 2rem;
-  border-left: thin solid #d3d3d3;
-  border-right: thin solid #d3d3d3;
-  border-top: thin solid #d3d3d3;
+  border-left: thin solid #9b9b9b;
+  border-right: thin solid #9b9b9b;
+  border-top: thin solid #9b9b9b;
   max-width: 800px;
 `;
 
@@ -71,7 +62,7 @@ const Wrapper2 = styled.div`
 
 const Wrapper3 = styled.div`
   margin-bottom: 1rem;
-  border-left: thin solid #d3d3d3;
+  border-left: thin solid #9b9b9b;
 `;
 
 const Avatar = styled.img`

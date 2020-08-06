@@ -62,8 +62,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 70vw;
   margin-left: 200px;
-  border-left: solid thin #d3d3d3;
-  border-right: solid thin #d3d3d3;
+  border-left: solid thin #9b9b9b;
+  border-right: solid thin #9b9b9b;
 `;
 
 const Wrapper2 = styled.div`
@@ -72,7 +72,7 @@ const Wrapper2 = styled.div`
   display: flex;
   justify-content: space-around;
   /* align-items: flex-end; */
-  border-bottom: solid thin #d3d3d3;
+  border-bottom: solid thin #9b9b9b;
 `;
 
 const ButtonWrapper = styled.div`

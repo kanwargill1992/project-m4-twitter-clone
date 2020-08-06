@@ -1,3 +1,4 @@
+//Used for input in tweets
 import React, { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { CurrentUserContext } from "./CurrentUserContext";
@@ -9,12 +10,14 @@ const TextArena = styled.textarea`
 `;
 
 const PlaceHolder = () => {
+  //inputs from CUrrent user
   const { input, setInput, lettersLeft, setLettersLeft } = useContext(
     CurrentUserContext
   );
-
+  //to setup the color of the text in text box
   const [inputColor, setInputColor] = useState("black");
 
+  //function to setup the color
   const setUpColor = () => {
     if (lettersLeft > 55) {
       setInputColor("black");
@@ -27,6 +30,7 @@ const PlaceHolder = () => {
     }
   };
 
+  //function to add tweet and the letter count
   const setUpTweet = (e) => {
     setInput(e.target.value);
     setLettersLeft(280 - e.target.value.length);
