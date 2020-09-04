@@ -27,7 +27,9 @@ function App() {
               <Route path="/notifications" component={Notifications} />
               <Route path="/bookmarks" component={Bookmark} />
               <Route path="/tweet/:tweetId" component={BigTweet} />
-              <Route path="/:profileId" component={Profile} />
+              <Route path="/:profileId">
+                <Profile />
+              </Route>
             </Switch>
           )}
           {status === "loading" && <Loader />}

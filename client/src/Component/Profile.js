@@ -3,13 +3,13 @@ import styled from "styled-components";
 import COLORS from "../Constants";
 import UserProfile from "./UserProfile";
 import Loader from "./Loader";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [feed, setFeed] = useState(null);
-  const { profileId } = useParams().profileId;
-
+  const { profileId } = useParams();
+  const history = useHistory();
   useEffect(() => {
     fetch(`/api/${profileId}/profile`)
       .then((res) => res.json())
@@ -27,7 +27,7 @@ const Profile = () => {
           })
         );
       });
-  }, []);
+  }, [profileId]);
 
   return user ? (
     <Wrapper>
@@ -71,7 +71,6 @@ const Wrapper2 = styled.div`
   top: -30px;
   display: flex;
   justify-content: space-around;
-  /* align-items: flex-end; */
   border-bottom: solid thin #9b9b9b;
 `;
 
