@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 const Tweets = ({ feed }) => {
   const history = useHistory();
-
+  console.log("feed", feed);
   const setTweet = (tweetId) => {
     history.push(`/tweet/${tweetId}`);
     history.goForward();
