@@ -15,14 +15,14 @@ const Profile = () => {
     fetch(`/api/${profileId}/profile`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data);
+        // console.log("data", data);
         setUser(data.profile);
       });
 
     fetch(`/api/${profileId}/feed`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("object", data);
+        // console.log("object", data);
         setFeed(
           data.tweetIds.map((key) => {
             return data.tweetsById[key];
@@ -49,7 +49,10 @@ const Profile = () => {
           <UserProfile user={user} />
         </ProfileWrapper>
       </Wrapper>{" "}
-      <Tweets feed={feed} />
+      <TweetWrapper>
+        {/* {feedStatus === "error" && <Error />} */}
+        {feed ? <Tweets feed={feed} /> : <Loader />}
+      </TweetWrapper>
     </>
   ) : (
     <Loader />
@@ -105,6 +108,10 @@ const Avatar = styled.img`
   width: 180px;
   height: 180px;
   border-radius: 50%;
+`;
+
+const TweetWrapper = styled.div`
+  margin-left: 169px;
 `;
 
 export default Profile;
